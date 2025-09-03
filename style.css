@@ -1,0 +1,50 @@
+body {
+    font-family: 'Franklin Gothic Medium';
+    background-color: #37353E;
+}
+
+
+.dropdownbutton
+{
+    background-color: #065084;
+    border: none;
+    padding: 20px;
+    color: #E0E0E0;
+    cursor: pointer;
+    font-size: 50px;
+    text-align: center;
+}
+
+.dropdown-menu
+{
+    display: none;
+    position: absolute;
+    background-color: #78B9B5;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.dropdown-menu a
+{
+    text-align: center;
+    margin-top: 10px;
+    padding: 20px;
+    color: #065084;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover
+{
+    background-color: white;
+}
+
+.dropdown:hover .dropdown-menu
+{
+    display: block;
+}
+
+.dropdown:hover .dropdownbutton
+{
+    background-color: azure;
+}
