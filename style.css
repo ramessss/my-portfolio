@@ -22,6 +22,9 @@ body {
     background-color: #78B9B5;
     padding: 20px;
     min-width: 300px;
+    /* position the menu right under the button */
+    left: 0;
+    top: 100%;
 }
 
 .dropdown-menu a
@@ -47,4 +50,11 @@ body {
 .dropdown:hover .dropdownbutton
 {
     background-color: azure;
+}
+
+.dropdown
+{
+    /* Limit hover area to content width and anchor abs children */
+    position: relative;
+    display: inline-block;
 }
