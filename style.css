@@ -1,16 +1,83 @@
 :root {
-    --bg: #37353e;
+    --bg: #2d2f34;
     --text: #ffffff;
-    --accent: #8a7cf5;
+    --accent: #ffd258;
 }
 
 html,body {
-    font-family: 'Franklin Gothic', Arial, sans-serif;
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
     margin: 0;
     background-color: var(--bg);
     color: var(--text);
 }
 
+p {
+    font-weight: 300;
+}
+
+.bg {
+background: radial-gradient( 100% 100% at var(--g3-3-x-position) var(--g3-3-y-position), #d77423 -80%, transparent ), radial-gradient( 100% 100% at var(--g3-1-x-position) var(--g3-1-y-position), #7556f0 -71%, transparent ), radial-gradient( 100% 100% at var(--g3-2-x-position) var(--g3-2-y-position), #987af1 -52%, transparent ), #21213b;
+animation-name: g-3;
+animation-iteration-count: infinite;
+animation-duration: 6s;
+transition-timing-function: ease-in
+}
+
+@property --g3-1-x-position { syntax: "<percentage>"; inherits: false; initial-value: 16.09375%; }
+
+@property --g3-1-y-position { syntax: "<percentage>"; inherits: false; initial-value: 33.12500000000001%; }
+
+@property --g3-2-x-position { syntax: "<percentage>"; inherits: false; initial-value: 48.55468750000001%; }
+
+@property --g3-2-y-position { syntax: "<percentage>"; inherits: false; initial-value: 9.648437500000002%; }
+
+@property --g3-3-x-position { syntax: "<percentage>"; inherits: false; initial-value: 78.6328125%; }
+
+@property --g3-3-y-position { syntax: "<percentage>"; inherits: false; initial-value: 79.8046875%; }
+
+
+:root {
+
+--g3-1-x-position: 16.09375%
+
+--g3-1-y-position: 33.12500000000001%
+
+--g3-2-x-position: 48.55468750000001%
+
+--g3-2-y-position: 9.648437500000002%
+
+--g3-3-x-position: 78.6328125%
+
+--g3-3-y-position: 79.8046875%
+
+}
+
+
+@keyframes g-3 { 50% { --g3-1-x-position: 42.69531250000001%; --g3-1-y-position: 91.5625%; --g3-2-x-position: 91.7578125%; --g3-2-y-position: 33.046875%; --g3-3-x-position: 5.742187500000001%; --g3-3-y-position: 5.546875000000001%; } }
+
+.Welcome {
+    display: block;
+    text-align: center;
+    font-size: 36px;
+    filter: drop-shadow(1px 1px 20px lightgray);
+
+    animation-duration: 1s;
+    animation-name: fadein;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein{
+    0%{
+        transform: translateY(20px);
+        opacity: 0%;
+    }
+    100%{
+        transform: translateY(-20px);
+        opacity: 100%;
+    }
+}
 /* Header layout: items on one line with spacing */
 .site-header {
     display: flex;
@@ -18,26 +85,32 @@ html,body {
     justify-content: space-between;
     padding: 16px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:#ffffff;
 }
 
 .brand {
     font-size: 24px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
+    margin-left: 200px;
+    color: var(--accent);
 }
 
 .site-nav ul {
     list-style: none;
     display: flex;           /* puts topics on the same line */
-    gap: 24px;               /* space between each topic */
+    gap: 36px;               /* space between each topic */
     margin: 0;
     padding: 0;
+    margin-right: 200px;
 }
 
 .site-nav a {
     color: var(--text);
     text-decoration: none;
     font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1.5px;
 }
 
 .site-nav a:hover {
@@ -55,6 +128,14 @@ html,body {
 .image {
     width: 100%;
     max-height: 450px;
+}
+
+.image:hover{
+    animation-play-state: running;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: spin;
 }
 
 .box {
