@@ -4,6 +4,11 @@
     --accent: #ffd258;
 }
 
+/* Include padding and border inside declared widths */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,body {
     font-family: "Kanit", sans-serif;
     font-weight: 100;
@@ -18,11 +23,50 @@ p {
 }
 
 .bg {
-background: radial-gradient( 100% 100% at var(--g3-3-x-position) var(--g3-3-y-position), #d77423 -80%, transparent ), radial-gradient( 100% 100% at var(--g3-1-x-position) var(--g3-1-y-position), #7556f0 -71%, transparent ), radial-gradient( 100% 100% at var(--g3-2-x-position) var(--g3-2-y-position), #987af1 -52%, transparent ), #21213b;
-animation-name: g-3;
-animation-iteration-count: infinite;
-animation-duration: 6s;
-transition-timing-function: ease-in
+    background: radial-gradient( 100% 100% at var(--g3-3-x-position) var(--g3-3-y-position), #d77423 -80%, transparent ), radial-gradient( 100% 100% at var(--g3-1-x-position) var(--g3-1-y-position), #7556f0 -71%, transparent ), radial-gradient( 100% 100% at var(--g3-2-x-position) var(--g3-2-y-position), #987af1 -52%, transparent ), #21213b;
+    animation-name: g-3;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    transition-timing-function: ease-in;
+    background-color: aliceblue;
+}
+
+.bg2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  padding: 24px;
+  background: rgb(15 23 42);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.bg2:before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 300px;
+    opacity: 0.12;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+  margin-bottom: 1rem;
+  display: inline-flex;
+}
+
+.icon > svg {
+  border-radius: 0.375rem;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  background: #2563eb;
 }
 
 @property --g3-1-x-position { syntax: "<percentage>"; inherits: false; initial-value: 16.09375%; }
@@ -89,7 +133,7 @@ transition-timing-function: ease-in
 }
 
 .brand {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 2px;
     margin-left: 200px;
@@ -109,7 +153,7 @@ transition-timing-function: ease-in
     color: var(--text);
     text-decoration: none;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 1.5px;
 }
 
@@ -138,15 +182,40 @@ transition-timing-function: ease-in
     animation-name: spin;
 }
 
-.box {
-    background-color: lightgray;
-    margin: 20px;
-    padding: 50px;
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
 }
 
-.maincontent {
-    max-width: 700px;
-    margin: auto;
+.box{
+    height: 450px;
+    width: 150px;
+    padding: 1em;
+    font-weight: 300;
+
+    background:  #546274;
+    border-radius: 15px;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.062),
+                15px 15px 15px rgba(0, 0, 0, 0.308);
+}
+
+/* Make the first box span full width on its own row */
+.box-0 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.box-1{
+    flex-grow: 0.5;
+}
+.box-2{
+    flex-grow: .5;
+}
+.box-3{
+    flex-grow: 1;
 }
 
 footer {
