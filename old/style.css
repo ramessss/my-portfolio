@@ -32,8 +32,8 @@ p {
 }
 
 .bg2 {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
   border-radius: 12px;
   padding: 24px;
   background: rgb(15 23 42);
@@ -100,6 +100,13 @@ p {
 
 
 @keyframes g-3 { 50% { --g3-1-x-position: 42.69531250000001%; --g3-1-y-position: 91.5625%; --g3-2-x-position: 91.7578125%; --g3-2-y-position: 33.046875%; --g3-3-x-position: 5.742187500000001%; --g3-3-y-position: 5.546875000000001%; } }
+
+.Header{
+    display: block;
+    text-align: center;
+    font-size: 36px;
+    filter: drop-shadow(1px 1px 20px lightgray);
+}
 
 .Welcome {
     display: block;
@@ -183,6 +190,7 @@ p {
 }
 
 .container{
+    padding: 150px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -191,10 +199,14 @@ p {
 }
 
 .box{
-    height: 450px;
-    width: 150px;
-    padding: 1em;
+    height: auto;
+    max-width: 500px;
+    padding: 2em;
     font-weight: 300;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     background:  #546274;
     border-radius: 15px;
@@ -202,12 +214,28 @@ p {
                 15px 15px 15px rgba(0, 0, 0, 0.308);
 }
 
-/* Make the first box span full width on its own row */
-.box-0 {
-    flex: 0 0 100%;
-    width: 100%;
+/* Layout image left, text right inside box-1 */
+.box-1 { 
+    gap: 16px;           /* space between image and text */
+    flex-wrap: nowrap;   /* keep them on one line */
 }
 
+.box-1 .imgbox { flex: 0 0 auto; }
+.box-1 .imgbox img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+.box-1 .text { flex: 0 0 auto; }
+
+.box-0{
+    flex: 0 0 100%;
+    font-weight: 500;
+    transform: translateY(-80px);
+    font-size: 48px;
+}
 .box-1{
     flex-grow: 0.5;
 }
@@ -222,4 +250,8 @@ footer {
     text-align: center;
     background-color:rgba(255, 255, 255, 0.1);
     padding: 16px 24px;;
+}
+
+.boxinbox{
+    background-color: black;    
 }
